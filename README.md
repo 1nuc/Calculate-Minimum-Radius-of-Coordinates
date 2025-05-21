@@ -26,16 +26,9 @@ Latitude,Longitude
 36.7783,-119.4179
 37.7749,-122.4194
 ```
- Future Enhancements
-Automatic column detection & renaming
-Handle files where latitude and longitude columns use different or unexpected names (e.g., lat, lng, geo_lat).
-
-Interactive 3D Map Visualization
-Integrate a 360-degree 3D globe interface to explore coverage areas interactively.
-
-Live Web Input Upload
-Enable drag-and-drop CSV upload through a web interface with instant feedback.
-
-GeoJSON & KML support
-Accept more geographic data formats beyond CSV.
+## Future Enhancements
+- Handle files where latitude and longitude columns use different or unexpected names (e.g., lat, lng, geo_lat).
+- Interactive 3D Map Visualization
+- Enable drag-and-drop CSV upload through a web interface with instant feedback.
+- Accept more geographic data formats beyond CSV.
 
