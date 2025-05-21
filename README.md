@@ -25,7 +25,7 @@ Latitude,Longitude
 34.0522,-118.2437
 36.7783,-119.4179
 37.7749,-122.4194
-
+```
  Future Enhancements
 Automatic column detection & renaming
 Handle files where latitude and longitude columns use different or unexpected names (e.g., lat, lng, geo_lat).
