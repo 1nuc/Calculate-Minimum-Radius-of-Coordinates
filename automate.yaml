@@ -1,0 +1,76 @@
+---
+crosscompute: 0.9.4
+name: Coordinate System
+version: 0.1.0
+input:
+  variables:
+    - id: Lat
+      view: number
+      path: variables.dictionary
+    - id: Lon
+      view: number
+      path: variables.dictionary
+    - id: coordinates
+      view: file
+      path: coordinates.csv
+output:
+  variables:
+    - id: CoordinateMap
+      view: image
+      path: CoordinateMap.png
+    - id: Coordinates_Table
+      view: table
+      path: Coordinates_Table.json
+  templates:
+    - path: output.md
+print:
+  variables:
+    - id: report
+      view: pdf
+      path: report.pdf
+      configuration:
+        header-footer:
+          font-family: sans-serif
+          font-size: 8pt
+          color: '#808080'
+          padding: 0.1in 0.25in
+          skip-first: true
+        page-number:
+          location: footer
+          alignment: right
+        name: me{mean}-va{variance}-vc{value_count}-bc{bin_count}.pdf
+    - id: report-uri
+      view: link
+      path: report.pdf
+      label: Report URI
+      configuration:
+        path: report-uri.json
+batches:
+  # case 0: use a batch folder to set values for input variables
+  - folder: batches/Trail
+  # case 1: use a batch configuration to vary values for input variables
+  - folder: batches/lat{Lat}-Lon{Lon}
+    configuration:
+      path: datasets/batches.csv
+  # case 2: use a reference folder to set default values for missing variables
+  #         use a batch configuration to vary selected variables
+  - folder: batches/batches/lat{Lat}-Lon{Lon}
+    reference:
+      folder: batches/a
+    configuration:
+      path: datasets/batches-Lan-Lon.csv
+scripts:
+  - path: run.ipynb
+environment:
+  packages:
+    - id: matplotlib
+      manager: pip
+    - id: cartopy
+      manager: pip
+    - id: pandas
+      manager: pip
+    - id: numpy
+      manager: pip
+display:
+  styles:
+    - path: style.css

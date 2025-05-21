@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/ahmed/crossComputeApp/Coordinates/.20250521-144226-825933-run.ipynb.py", line 49, in <module>
+    ~((pl.col('Lon').is_null()) & (pl.col('Lon') < -180) | (pl.col('Lon') > 180))).collect().to_numpy())
+  File "/home/ahmed/.local/lib/python3.10/site-packages/polars/_utils/deprecation.py", line 93, in wrapper
+    return function(*args, **kwargs)
+  File "/home/ahmed/.local/lib/python3.10/site-packages/polars/lazyframe/frame.py", line 2224, in collect
+    return wrap_df(ldf.collect(engine, callback))
+FileNotFoundError: No such file or directory (os error 2): /home/ahmed/crossComputeApp/Coordinates/batches/Trail/input/coordinates.csv
+
+This error occurred with the following context stack:
+	[1] 'csv scan'
+	[2] 'select'
+	[3] 'filter'
+	[4] 'sink'
+
