@@ -11,7 +11,7 @@ The application is designed to find the **smallest possible circle** that contai
 
 ## 📥 Input Format
 
-The tool expects a CSV file with **explicitly named columns**:
+The tool expects a CSV file contained **explicitly named columns**:
 Latitude, Longitude
 
 Each row must represent a valid geographical coordinate:
